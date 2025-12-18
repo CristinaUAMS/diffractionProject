@@ -9,3 +9,12 @@ IMAGE_FILES = {
     "lens_convex": BASE_DIR/"images/LaserLens2.jpg",
     "lens_planar": BASE_DIR/"images/planeToLaser.jpg",
 }
+
+## Core radius (in pixels) to mask saturated central spot in each image
+CORE_RADII = {
+    "aperture_only": 10,
+    "lens_convex": 25,
+    "lens_planar": 25,
+}
+
+TARGET_SIZE = 768
