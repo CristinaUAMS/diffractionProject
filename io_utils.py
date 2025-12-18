@@ -7,7 +7,7 @@ from config import TARGET_SIZE
 
 ##load color image and convert to grayscale float32 [0,1]
 def loadToGray(path: Path) -> np.ndarray:
-    img = cv2.imread(str(Path))
+    img = cv2.imread(str(path))
     if img is None:
         raise FileNotFoundError(f"could not find image {path}")
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY).astype(np.float32)
