@@ -28,7 +28,7 @@ def halfPowerRadius(profile: np.ndarray) -> float:
 ## A simple 'Airy-like' reference curve:
 ##     I(r) ∝ [2 J1(k r) / (k r)]^2
 ## This is not a fit, just a shape to overlay 
-def airy_like_reference(r: np.ndarray, k: float = 0.02) -> np.ndarray:
+def airyLikeReference(r: np.ndarray, k: float = 0.02) -> np.ndarray:
 
     from scipy.special import j1  # Bessel J1
 
@@ -53,7 +53,7 @@ def airy_like_reference(r: np.ndarray, k: float = 0.02) -> np.ndarray:
 #     D_eff ≈ λ z / δx_speckle
 ## Estimate δx_speckle from the FWHM in pixels times pixel size.
 ## Returns D_eff in meters.
-def effective_aperture_from_speckle(
+def effectiveApertureFromSpeckle(
     fwhm_px: float,
     pixel_size_m: float,
     wavelength_m: float,
