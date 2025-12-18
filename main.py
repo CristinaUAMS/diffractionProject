@@ -4,13 +4,16 @@ from io_utils import loadToGray
 from radial_analysis import analyzeRadial, plotRadialProfiles
 from fft_analysis import fftFingerprint
 from speckle_analysis import speckleContrastMap, plotSpeckleContrast, speckleGrainSize
-
+from math_metrics import effectiveApertureFromSpeckle
 
 def main():
     print(f"Outputs will be saved to: {OUT_DIR}")
     radial_profiles = {}
     speckle_summary = {}
 
+    WAVELENGTH_M = 532e-9      # 532 nm green laser
+Z_M = 1.0                  # 1 meter from aperture/lens to wall 
+PIXEL_SIZE_M = 1e-4        # 0.1 mm per pixel on wall 
     for name, path in IMAGE_FILES.items():
         print(f"\n=== Processing {name} ({path.name}) ===")
         # 1. Load & crop
